@@ -1,4 +1,6 @@
 ﻿namespace Assignment2_LINQ;
+
+using Demo01.Data;
 using static Assignment2_LINQ.ListGenerator;
 
 internal class Program
@@ -143,25 +145,94 @@ internal class Program
         #endregion
 
         #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
-       ///  var Result = ProductList.Select (P => P.ProductName.Length >=3 ) 
-       ///                        .Concat(CustomerList.Select(C => C.CustomerName.Length >=3));
-       ///                                                                  
-       ///                                                             Error Solution 
-       ///                 foreach (var Product in Result)
-       ///                     Console.WriteLine(Product);
-       ///   
+        ///  var Result = ProductList.Select (P => P.ProductName.Length >=3 ) 
+        ///                        .Concat(CustomerList.Select(C => C.CustomerName.Length >=3));
+        ///                                                                  
+        ///                                                             Error Solution 
+        ///                 foreach (var Product in Result)
+        ///                     Console.WriteLine(Product);
+        ///   
         #endregion
 
         #endregion
 
+        #region LINQ - Partitioning Operators
+        #region 1. Get the first 3 orders from customers in Washington
+        ///  var Result = CustomerList.Where(C => C.City == "Washington").SelectMany(C => C.Orders)
+        ///                                                   .OrderBy(C => C.OrderDate)
+        ///                                                   .Take(3);
+        ///  foreach (var Customer in Result)
+        ///  {
+        ///      Console.WriteLine(Customer);
+        ///  }
+        /// 
 
 
 
 
 
+
+        #endregion
+
+        #region 2. Get all but the first 2 orders from customers in Washington.
+
+        ///   var Result = CustomerList.Where(C => C.City == "Washington").SelectMany(C => C.Orders)
+        ///                                                    .OrderBy(C => C.OrderDate)
+        ///                                                    .Skip(2);
+        ///   foreach (var Customer in Result)
+        ///   {
+        ///       Console.WriteLine(Customer);
+        ///   }
+
+
+        #endregion
+
+        #region 3. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+
+        ///   int[] Numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+        /// 
+        ///   var Result = Numbers.TakeWhile((N, I) => N > I);
+        ///   foreach (var number in Result)
+        ///       Console.WriteLine(number);
+
+
+        #endregion
+
+        #region 4.Get the elements of the array starting from the first element divisible by 3.
+
+        //   int[] Numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+        // 
+        //   var Result = Numbers.SkipWhile(num => num % 3 != 0);
+        //   foreach (var Number in Result)
+        //       Console.WriteLine(Number);
+
+        #endregion
+
+        #region 5. Get the elements of the array starting from the first element less than its position.
+      /// int[] Numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+      /// 
+      /// var Result = Numbers.SkipWhile((num, index) => num >= index);
+      ///            foreach (var Number  in Result)
+      ///     Console.WriteLine(Number);
+
+        #endregion
+
+
+
+
+        #endregion
     }
 
 }
+   
+
+
+
+       
+   
+
+
+
 
             
        
