@@ -94,7 +94,65 @@ internal class Program
         #endregion
 
 
+        #region LINQ - Set Operators
 
+        #region  1. Find the unique Category names from Product List
+        ///  var Result = ProductList.Select(P => P.Category)
+        ///                       .Distinct();
+        /// 
+        /// 
+        ///            foreach (var Product in Result)
+        ///                Console.WriteLine(Product); 
+        #endregion
+
+        #region 2. Produce a Sequence containing the unique first letter from both product and customer names.
+
+        /// var Result = ProductList.Select(P => P.ProductName.First())
+        ///                       .Union(CustomerList.Select(C => C.CustomerName.First()))
+        ///                       .Distinct();
+        /// 
+        ///               foreach (var Product in Result)
+        ///                   Console.WriteLine(Product);
+        /// 
+
+
+        #endregion
+
+        #region 3. Create one sequence that contains the common first letter from both product and customer names.
+
+        ///  var Result = ProductList.Select(P => P.ProductName.First())
+        ///                        .Intersect(CustomerList.Select(C => C.CustomerName.First()));
+        ///                        
+        ///  
+        ///                foreach (var Product in Result)
+        ///                    Console.WriteLine(Product);
+
+        #endregion
+
+        #region 4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+        ///  var Result = ProductList.Select(P => P.ProductName.First())
+        ///                        .Except(CustomerList.Select(C => C.CustomerName.First()));
+        ///                        
+        ///                 foreach (var Product in Result)
+        ///                     Console.WriteLine(Product);
+
+
+
+
+
+        #endregion
+
+        #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+       ///  var Result = ProductList.Select (P => P.ProductName.Length >=3 ) 
+       ///                        .Concat(CustomerList.Select(C => C.CustomerName.Length >=3));
+       ///                                                                  
+       ///                                                             Error Solution 
+       ///                 foreach (var Product in Result)
+       ///                     Console.WriteLine(Product);
+       ///   
+        #endregion
+
+        #endregion
 
 
 
