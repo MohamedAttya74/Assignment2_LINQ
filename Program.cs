@@ -1,6 +1,7 @@
 ﻿namespace Assignment2_LINQ;
 
 using Demo01.Data;
+using System.Collections.Generic;
 using static Assignment2_LINQ.ListGenerator;
 
 internal class Program
@@ -209,14 +210,37 @@ internal class Program
         #endregion
 
         #region 5. Get the elements of the array starting from the first element less than its position.
-      /// int[] Numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-      /// 
-      /// var Result = Numbers.SkipWhile((num, index) => num >= index);
-      ///            foreach (var Number  in Result)
-      ///     Console.WriteLine(Number);
+        /// int[] Numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+        /// 
+        /// var Result = Numbers.SkipWhile((num, index) => num >= index);
+        ///            foreach (var Number  in Result)
+        ///     Console.WriteLine(Number);
 
         #endregion
 
+
+
+
+        #endregion
+
+
+        #region LINQ – Grouping Operators
+        #region   1.Use group by to partition a list of numbers by their remainder when divided by 5
+
+      ///  List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+      ///  var Result = numbers.GroupBy(num => num % 5)
+      ///      .OrderBy(group => group.Key);
+      /// 
+      ///  foreach (var group in Result)
+      ///  {
+      ///      Console.WriteLine( $" Numbers with remainder {group.Key} when divided by 5: ");
+      ///      foreach (var num in group)
+      ///      {
+      ///          Console.WriteLine(num  );
+      ///      }
+      ///      
+      ///  }
+        #endregion
 
 
 
